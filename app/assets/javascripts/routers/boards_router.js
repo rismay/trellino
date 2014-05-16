@@ -13,6 +13,13 @@ Trellino.Routers.Boards = Backbone.Router.extend({
     var rootView = new Trellino.Views.BoardsIndex();
     that._swapView(rootView);
   },
+  show: function(id){
+    var rootView = new Trellino.Views.BoardsShow({
+      showId: id
+    });
+    this._swapView(rootView);
+    debugger
+  },
   _swapView: function (newView) {
     this._currentView && this._currentView.remove();
     this._currentView = newView;
