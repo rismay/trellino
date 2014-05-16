@@ -7,7 +7,6 @@ window.Trellino = {
     new Trellino.Routers.Boards({
       "$rootEl": $('#content')
     });
-    console.log('Cool.');
     Backbone.history.start();
   }
 };

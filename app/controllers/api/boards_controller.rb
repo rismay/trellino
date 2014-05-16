@@ -13,7 +13,11 @@ module Api
     def create
       @board = current_user.boards.build(board_params)
       if @board.save
-        render partial: "api/boards/board", locals: { board: @board }
+        respond_to do |format|
+          format.html { redirect_to root_url }
+          format.json { render partial: "api/boards/board", locals: { board: @board } }
+        end
+
       else
         render json: { errors: @board.errors.full_messages }, status: 422
       end
