@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'pry-rails'
 gem 'draper'
+gem 'serialize_json-rails'
 
 group :doc do
   gem 'sdoc', require: false
