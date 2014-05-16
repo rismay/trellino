@@ -5,13 +5,12 @@ Trellino.Views.BoardsShow = Backbone.View.extend({
   },
   refresh: function () {
     Trellino.Collections.boards.fetch();
-    this.listenTo(Trellino.Collections.boards, "sync boards", this.render);
   },
   initialize: function (options) {
     this.id = options.showId;
+    this.listenTo(Trellino.Collections.boards, "sync", this.render);
   },
   render: function () {
-    console.log("Getting board")
     var b = Trellino.Collections.boards.getOrFetch(this.id);
     var renderedTemplate = this.template({
       board: b

@@ -2,7 +2,7 @@ Trellino.Views.BoardsIndex = Backbone.View.extend({
   template: JST['boards/index'],
   initialize: function (options) {
     console.log("Adding listener.");
-    this.listenTo(Trellino.Collections.boards, "sync feeds", this.render);
+    this.listenTo(Trellino.Collections.boards, "sync", this.render);
   },
   render: function () {
     var renderedTemplate = this.template({
