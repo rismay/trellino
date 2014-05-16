@@ -4,7 +4,11 @@ window.Trellino = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from trellino!');
+    new Trellino.Routers.Boards({
+      "$rootEl": $('#content')
+    });
+    console.log('Cool.');
+    Backbone.history.start();
   }
 };
 
