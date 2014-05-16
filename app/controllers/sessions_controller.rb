@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+    user = User.find_by_credentials(user_params[:email], user_params[:password])
     if user
       login(user)
       redirect_to root_url
@@ -17,4 +17,5 @@ class SessionsController < ApplicationController
     logout
     redirect_to new_session_url
   end
+
 end

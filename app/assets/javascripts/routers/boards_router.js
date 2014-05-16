@@ -5,7 +5,6 @@ Trellino.Routers.Boards = Backbone.Router.extend({
   routes: {
     "" : "index",
     "boards/:id" : "show"
-    // , "boards/:id/entries" : "entryIndex"
   },
   index: function () {
     console.log('Creating Index');

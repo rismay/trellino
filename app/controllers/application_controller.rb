@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?
 
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end
+  
   private
   def current_user
     session_token = session[:session_token]
