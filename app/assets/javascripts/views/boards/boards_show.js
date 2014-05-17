@@ -8,12 +8,14 @@ Trellino.Views.BoardsShow = Backbone.View.extend({
   },
   initialize: function (options) {
     this.id = options.showId;
+    this.model = Trellino.Collections.boards.getOrFetch(this.id);
     this.listenTo(Trellino.Collections.boards, "sync", this.render);
+    this.listenTo(this.model.lists(), "add remove", this.render);
   },
   render: function () {
-    var b = Trellino.Collections.boards.getOrFetch(this.id);
     var renderedTemplate = this.template({
-      board: b
+      board: this.model,
+      lists: this.model.lists()
     });
     this.$el.html(renderedTemplate);
     return this;

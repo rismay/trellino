@@ -3,7 +3,7 @@
 <% $ul = $("<ul></ul>"); %>
 <% objectModels.each(function (board) { %>
   <% $li = $("<li class='link-to-board' data-id='" + board.get("id") + "'></li>");  %>
-  <% $li.append($("<a href='#boards/" + board.get("id") + "'>" + board.get('title') +  "</a>")); %>
+  <% $li.append($("<a href='#/" + board.get("id") + "'>" + board.get('title') +  "</a>")); %>
   <% $ul.append($li); %>
   <% }); %>
 

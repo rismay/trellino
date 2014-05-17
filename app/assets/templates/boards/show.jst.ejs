@@ -1,3 +1,11 @@
-<h2><%= board.get('title') %></h2>
+<h2><%= board.escape('title') %></h2>
 
-<div id="lists"></div>
+
+<% $ul = $("<ul></ul>"); %>
+<% lists.each(function (list) { %>
+<% $li = $("<li class='link-to-list' data-id='" + list.get("id") + "'></li>");  %>
+<% $li.append($("<a href=" + list.url() +" >" + list.get('title') +  "</a>")); %>
+<% $ul.append($li); %>
+  <% }); %>
+
+  <%= $ul.html() %>
