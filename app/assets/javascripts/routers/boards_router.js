@@ -7,7 +7,6 @@ Trellino.Routers.Boards = Backbone.Router.extend({
     ":id" : "show"
   },
   index: function () {
-    console.log('Creating Index');
     var that = this;
     Trellino.Collections.boards.fetch();
     var rootView = new Trellino.Views.BoardsIndex();
